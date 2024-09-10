@@ -9,4 +9,3 @@ for i in range(0, 100):
 
 # Join all elements with a comma and space, and print the result
 print(", ".join(result))
-
