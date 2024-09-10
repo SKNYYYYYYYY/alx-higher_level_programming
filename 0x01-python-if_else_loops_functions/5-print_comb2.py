@@ -1,6 +1,12 @@
 #!/usr/bin/python3
-for i in range(0, 14):
+result = []
+
+for i in range(0, 100):
     if i < 10:
-        print(f"0{i}, ", end="")
+        result.append("{:02}".format(i))
     else:
-        print(f"{i}, ", end="")
+        result.append("{}".format(i))
+
+# Join all elements with a comma and space, and print the result
+print(", ".join(result))
+
