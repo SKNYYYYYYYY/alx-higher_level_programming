@@ -12,7 +12,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 continue
         print()
         if x - (counter + none_int) != 0 and counter != x:
-            raise IndexError
+            raise IndexError 
     except IndexError:
-        pass
+        print("Error")
     return counter
