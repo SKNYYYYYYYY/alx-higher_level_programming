@@ -14,5 +14,5 @@ def safe_print_list_integers(my_list=[], x=0):
         if x - (counter + none_int) != 0 and counter != x:
             raise IndexError
     except IndexError:
-        print("Error")
+        pass
     return counter
