@@ -1,59 +1,55 @@
 #!/usr/bin/python3
-"""This module contains a class that has a constructor"""
-try:
-    class Square:
-        """This class has a constructor"""
-        def __init__(self, size=0, position=(0, 0)):
-            """This is a method that checks whether the size provided is a
-              positive integer
-            args: size, size parameter provided during calling
-            """
-            self.__size = size
-            self.__position = position
-        @property
-        def size(self):
-            """Getter method for size"""
-            return self.__size
+"""This module defines a Square class with size and position attributes."""
 
-        @size.setter
-        def size(self, value):
-            """Setter method for size"""
-            self.__size = value
-            if not isinstance(self.__size, int):
-                raise TypeError("size must be an integer")
-            if self.__size < 0:
-                raise ValueError("size must be >= 0")
-        @property
-        def position(self):
-            """Get the position"""
-            return self.__position
-        
-        @position.setter
-        def position(self, value):
-            if not isinstance(self.__position, tuple) and not all(x > 0 for x in self.__position):
-                raise TypeError("position must be a tuple of positive integers")
-        def area(self):
-            """This function calculates the area of the square
-            Returns: float, area of the square
-            """
-            area = self.__size * self.__size
-            return area
+class Square:
+    """Class to define a square with a given size and position."""
+    
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize the square with a size and position."""
+        self.size = size  # Using the property setter
+        self.position = position  # Using the property setter
 
-        def my_print(self):
-            """This function prints a square using the symbol #"""
-            if self.__size == 0:
-                print()
-            i = 0
-            while i < self.__size:
-                j = 0
-                print(" " * self.__position[0], end="")
-                while j < self.__size:
-                    print("#", end="")
-                    j += 1
-                print()
-                i += 1
+    @property
+    def size(self):
+        """Getter method for size."""
+        return self.__size
 
-except TypeError as te:
-    print(te)
-except ValueError as ve:
-    print(ve)
+    @size.setter
+    def size(self, value):
+        """Setter method for size."""
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    @property
+    def position(self):
+        """Getter method for position."""
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """Setter method for position."""
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not all(isinstance(num, int) and num >= 0 for num in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
+
+    def area(self):
+        """Calculate the area of the square."""
+        return self.size * self.size
+
+    def my_print(self):
+        """Print the square using the '#' character."""
+        if self.size == 0:
+            print("")
+            return
+
+        # Print the empty lines based on position[1]
+        print("\n" * self.position[1], end="")
+
+        # Print the square
+        for i in range(self.size):
+            print(" " * self.position[0] + "#" * self.size)
+
