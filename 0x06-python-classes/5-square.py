@@ -33,8 +33,10 @@ try:
 
         def my_print(self):
             """This function prints a square using the sym"""
+            if self.__size == 0:
+                print()
             i = 0
-            while i <self.__size:
+            while i < self.__size:
                 j = 0
                 while j < self.__size:
                     print("#", end="")
