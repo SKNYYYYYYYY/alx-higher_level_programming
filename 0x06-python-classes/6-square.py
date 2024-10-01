@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """This module defines a Square class with size and position attributes."""
 
+
 class Square:
     """Class to define a square with a given size and position."""
-    
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with a size and position."""
         self.size = size  # Using the property setter
@@ -52,4 +52,3 @@ class Square:
         # Print the square
         for i in range(self.size):
             print(" " * self.position[0] + "#" * self.size)
-
