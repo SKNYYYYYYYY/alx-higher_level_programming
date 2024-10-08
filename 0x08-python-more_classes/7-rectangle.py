@@ -2,9 +2,13 @@
 """module with one class"""
 
 
+from typing import ClassVar
+
+
 class Rectangle:
     """rectangle class"""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Constructor"""
@@ -16,7 +20,7 @@ class Rectangle:
         """string representation"""
         new_list = []
         for i in range(self.__height):
-            row_string = "#"*self.__width
+            row_string = Rectangle.print_symbol*self.__width
             row_string += "\n"
             new_list.append(row_string)
         formatted = "".join(new_list)

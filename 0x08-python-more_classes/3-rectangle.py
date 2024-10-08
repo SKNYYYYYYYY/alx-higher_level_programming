@@ -20,7 +20,7 @@ class Rectangle:
             row_string += "\n"
             new_list.append(row_string)
         formatted = "".join(new_list)
-        return formatted
+        return formatted.strip()
 
     @property
     def height(self):
