@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""defines the integer addition function"""
 def add_integer(a, b=98):
     """
     Adds two integers or floats (cast to integers).
