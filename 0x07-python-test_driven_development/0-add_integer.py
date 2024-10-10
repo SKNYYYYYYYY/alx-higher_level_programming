@@ -8,13 +8,18 @@ def add_integer(a, b=98):
     """ Args: a and b; Returns: int: The sum of a and b, after converting floats to integers.
     Raises: TypeError: If a or b are not integers or floats.
     """
-    if type(a) not in (int, float):
+    # if type(a) not in (int, float):
+    #     raise TypeError("a must be an integer")
+    # if type(b) not in (int, float):
+    #     raise TypeError("b must be an integer")
+    # if type(a) is float:
+    #     a = int(a)
+    # if type(b) is float:
+    #     b = int(b)
+    if ((not isinstance(a, int) and not isinstance(a, float))):
         raise TypeError("a must be an integer")
-    if type(b) not in (int, float):
+    if ((not isinstance(b, int) and not isinstance(b, float))):
         raise TypeError("b must be an integer")
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
 
-    return a + b
+
+    return (int(a) + int(b))
