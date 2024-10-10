@@ -13,9 +13,9 @@ def text_indentation(text):
         if text[i] == ' ' and space_flag:
             continue
         output.append(text[i])
-        if text[i] in (":", "?", "."):
+        if (text[i] in (":", "?", ".")):
             output.append("\n\n")
             space_flag = True
         else:
             space_flag = False
-    print("".join(output))
+    print("".join(output), end="")
