@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from typing import Type
 
 
 def matrix_divided(matrix, div):
