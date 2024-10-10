@@ -2,7 +2,6 @@
 """module with one class"""
 
 
-from typing import ClassVar
 
 
 class Rectangle:

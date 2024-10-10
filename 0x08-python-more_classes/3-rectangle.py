@@ -2,8 +2,6 @@
 """module with one class"""
 
 
-from hmac import new
-
 
 class Rectangle:
     """rectangle class"""
