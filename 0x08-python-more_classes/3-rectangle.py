@@ -13,7 +13,7 @@ class Rectangle:
         self.__width = width
 
     def __str__(self):
-        # """string representation"""
+        """string representation"""
         new_list = []
         for i in range(self.__height):
             row_string = "#"*self.__width
