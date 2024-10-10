@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+defines a function that initiates a new line after :,? or . in a string
+"""
+
+
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
