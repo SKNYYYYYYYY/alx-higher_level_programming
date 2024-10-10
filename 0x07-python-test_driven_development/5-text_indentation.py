@@ -5,6 +5,10 @@ defines a function that initiates a new line after :,? or . in a string
 
 
 def text_indentation(text):
+    """text_indentation
+    args:
+        text: string to indent
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     output = []
