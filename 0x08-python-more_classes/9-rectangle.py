@@ -88,10 +88,14 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
-
-        new_instance = cls(size, size)
-        return new_instance
+        try:
+            if not isinstance(size, int):
+                raise TypeError("width must be an integer")
+            if size < 0:
+                raise ValueError("width must be >= 0")
+            new_instance = cls(size, size)
+            return new_instance
+        except (TypeError, ValueError) as e:
+                cls.number_of_instances -= 1
+                raise e
+        print("Bye rectangle...")
