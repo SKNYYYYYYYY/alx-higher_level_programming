@@ -3,5 +3,8 @@
     Only the lookup function over here
 """
 def lookup(obj):
-    """returns the object attributes and methods"""
+    """
+    args: obj - the object to lookup
+    returns the object attributes and methods
+    """
     return dir(obj)
