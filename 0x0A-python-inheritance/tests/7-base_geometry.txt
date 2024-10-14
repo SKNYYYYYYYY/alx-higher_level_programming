@@ -58,3 +58,67 @@ Traceback (most recent call last):
     ...
 TypeError: scores must be an integer
 
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Test integer_validator with only one argument
+>>> bg.integer_validator("test")
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+# Test integer_validator with boolean
+>>> bg.integer_validator("boolean", True)
+Traceback (most recent call last):
+    ...
+TypeError: boolean must be an integer
+
+# Test integer_validator with complex number
+>>> bg.integer_validator("complex", 1+2j)
+Traceback (most recent call last):
+    ...
+TypeError: complex must be an integer
+
+# Test integer_validator with string representation of a number
+>>> bg.integer_validator("string_number", "123")
+Traceback (most recent call last):
+    ...
+TypeError: string_number must be an integer
+
+# Test integer_validator with float('inf')
+>>> bg.integer_validator("infinity", float('inf'))
+Traceback (most recent call last):
+    ...
+TypeError: infinity must be an integer
+
+# Test integer_validator with float('nan')
+>>> bg.integer_validator("not_a_number", float('nan'))
+Traceback (most recent call last):
+    ...
+TypeError: not_a_number must be an integer
+
+# Test area method with arguments
+>>> bg.area(5)
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+# Test instantiation with arguments
+>>> bg = BaseGeometry(10)
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry() takes no arguments
+
+# Test integer_validator with very large integer
+>>> bg.integer_validator("large_number", 999999999999999999999999999999)
+
+# Test integer_validator with minimum allowed value
+>>> bg.integer_validator("min_value", 1)
+
+# Test integer_validator with zero
+>>> bg.integer_validator("zero", 0)
+Traceback (most recent call last):
+    ...
+ValueError: zero must be greater than 0
