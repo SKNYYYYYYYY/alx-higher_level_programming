@@ -4,7 +4,7 @@ This module defines the function inherits
 """
 
 
-def inherits(obj, a_class):
+def inherits_from(obj, a_class):
     """
     A function that checks if object is an instance of a class
     that inherited (directly or indirectly) from the specified class
@@ -16,4 +16,4 @@ def inherits(obj, a_class):
     Returns:
         bool: True if object is an instance of a class that inherited
     """
-    return issubclass(obj, a_class)
+    return isinstance(obj, a_class)
