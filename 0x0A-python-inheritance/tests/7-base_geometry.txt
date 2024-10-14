@@ -1,0 +1,60 @@
+This module defines the BaseGeometry class and includes doctests.
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+Test area method:
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+Test integer_validator method with valid inputs:
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+Test integer_validator method with invalid types:
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
+
+Test integer_validator with float:
+>>> bg.integer_validator("average", 7.5)
+Traceback (most recent call last):
+    ...
+TypeError: average must be an integer
+
+Test integer_validator with None:
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+Test integer_validator with list:
+>>> bg.integer_validator("ages", [3])
+Traceback (most recent call last):
+    ...
+TypeError: ages must be an integer
+
+Test integer_validator with tuple:
+>>> bg.integer_validator("coordinates", (1, 2))
+Traceback (most recent call last):
+    ...
+TypeError: coordinates must be an integer
+
+Test integer_validator with dict:
+>>> bg.integer_validator("scores", {"math": 95})
+Traceback (most recent call last):
+    ...
+TypeError: scores must be an integer
+
