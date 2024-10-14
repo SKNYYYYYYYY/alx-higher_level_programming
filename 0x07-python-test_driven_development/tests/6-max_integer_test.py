@@ -11,3 +11,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1,-2]), -1)
     def test_empty_list(self):
         self.assertIsNone(max_integer([]))
+
+    def test_none_int_list(self):
+        self.assertIsInstance()
