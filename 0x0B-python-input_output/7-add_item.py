@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This is a script that loads,add then save
+"""
 import sys
 
 # Import the functions
