@@ -13,5 +13,5 @@ def append_write(filename="", text=""):
     Returns:
         the length of the text written
     """
-    with open('file_append.txt', 'a') as f:
+    with open(filename, 'a') as f:
         return f.write(text)
