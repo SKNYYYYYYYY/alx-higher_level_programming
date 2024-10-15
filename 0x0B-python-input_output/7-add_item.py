@@ -1,24 +1,19 @@
 #!/usr/bin/python3
-"""
-This is a script that loads,add then save
-"""
 import sys
-
-# Import the functions
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+from os import path
+from save_to_json_file import save_to_json_file
+from load_from_json_file import load_from_json_file
 
 filename = "add_item.json"
 
-try:
-    # Load the existing list from the file
-    items = load_from_json_file(filename)
-except FileNotFoundError:
-    # If the file doesn't exist, start with an empty list
-    items = []
+# Load existing list or create a new one if file doesn't exist
+if path.exists(filename):
+    my_list = load_from_json_file(filename)
+else:
+    my_list = []
 
-# Add all command-line arguments (excluding the script name) to the list
-items.extend(sys.argv[1:])
+# Add all arguments to the list
+my_list.extend(sys.argv[1:])
 
-# Save the updated list back to the file
-save_to_json_file(items, filename)
+# Save the updated list to the file
+save_to_json_file(my_list, filename)
