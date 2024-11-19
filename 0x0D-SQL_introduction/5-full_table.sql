@@ -1,2 +1,2 @@
 -- full description
-SHOW COLUMNS FROM first_table
+SHOW CREATE first_table
