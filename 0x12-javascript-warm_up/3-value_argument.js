@@ -1,8 +1,4 @@
 #!/usr/bin/node
-const process = require('process');
-const args = process.argv;
-if (args.length === 2) {
-  console.log('No argument');
-} else {
-  console.log(args[2]);
-}
+const args = process.argv.slice(2); // Extract arguments passed to the script
+const firstArg = args[0] || 'No argument'; // Check if the first argument exists, default to "No argument"
+console.log(firstArg);
