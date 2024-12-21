@@ -5,4 +5,4 @@ const fs = require('fs');
 const [sourceFile1, sourceFile2, destinationFile] = process.argv.slice(2);
 
 // Read and concatenate the files, then write to the destination
-fs.writeFileSync(destinationFile, fs.readFileSync(sourceFile1) + '\n' + fs.readFileSync(sourceFile2));
+fs.writeFileSync(destinationFile, fs.readFileSync(sourceFile1) + '\n' + fs.readFileSync(sourceFile2) + '\n');
